@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { 
@@ -8,12 +7,11 @@ import {
   BarChart3, 
   ChevronLeft,
   ChevronRight,
-  Menu,
+  LogOut,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useAppStore } from '@/stores/useAppStore';
-import { useResize } from '@/hooks/useResize';
 
 const navigation = [
   { name: 'dashboard', href: '/', icon: Home },
@@ -31,13 +29,7 @@ export function Sidebar({ className }: SidebarProps) {
   const location = useLocation();
   const { sidebarCollapsed, toggleSidebar } = useAppStore();
   
-  const { width, startResize, isResizing } = useResize({
-    initialWidth: 280,
-    minWidth: 200,
-    maxWidth: 400,
-  });
-
-  const sidebarWidth = sidebarCollapsed ? 60 : width;
+  const sidebarWidth = sidebarCollapsed ? 80 : 280;
 
   return (
     <>
@@ -50,7 +42,7 @@ export function Sidebar({ className }: SidebarProps) {
         style={{ width: sidebarWidth }}
       >
         {/* Sidebar Header */}
-        <div className="flex h-16 shrink-0 items-center justify-between px-4 border-b">
+        <div className="flex h-16 shrink-0 items-center justify-between border-b px-3">
           {!sidebarCollapsed && (
             <h1 className="text-lg font-semibold">Dashboard</h1>
           )}
@@ -58,7 +50,10 @@ export function Sidebar({ className }: SidebarProps) {
             variant="ghost"
             size="sm"
             onClick={toggleSidebar}
-            className="ml-auto"
+            className={cn(
+              "flex-shrink-0",
+              sidebarCollapsed ? "mx-auto" : "ml-auto"
+            )}
           >
             {sidebarCollapsed ? (
               <ChevronRight className="h-4 w-4" />
@@ -69,7 +64,10 @@ export function Sidebar({ className }: SidebarProps) {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 space-y-1 p-4">
+        <nav className={cn(
+          "flex-1 space-y-1",
+          sidebarCollapsed ? "p-2" : "p-4"
+        )}>
           {navigation.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.href;
@@ -79,28 +77,58 @@ export function Sidebar({ className }: SidebarProps) {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                  "flex items-center text-sm font-medium rounded-md transition-colors",
                   isActive
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground",
-                  sidebarCollapsed ? "justify-center" : "justify-start"
+                  sidebarCollapsed 
+                    ? "justify-center p-2"
+                    : "justify-start px-3 py-2"
                 )}
                 title={sidebarCollapsed ? t(`nav.${item.name}`) : undefined}
               >
-                <Icon className={cn("h-5 w-5", !sidebarCollapsed && "mr-3")} />
-                {!sidebarCollapsed && t(`nav.${item.name}`)}
+                <Icon className={cn(
+                  "h-5 w-5 flex-shrink-0", 
+                  !sidebarCollapsed && "mr-3"
+                )} />
+                {!sidebarCollapsed && (
+                  <span className="truncate">{t(`nav.${item.name}`)}</span>
+                )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Resize Handle */}
-        {!sidebarCollapsed && (
-          <div
-            className="absolute right-0 top-0 h-full w-1 cursor-col-resize hover:bg-primary/20 transition-colors"
-            onMouseDown={startResize}
-          />
-        )}
+        {/* Logout Button at Bottom */}
+        <div className={cn(
+          "border-t p-2",
+          !sidebarCollapsed && "p-4"
+        )}>
+          <Button
+            variant="ghost"
+            onClick={() => {
+              // Handle logout logic here
+              console.log('Logout clicked');
+              // Example: Clear user session, redirect to login, etc.
+            }}
+            className={cn(
+              "w-full flex items-center text-sm font-medium rounded-md transition-colors",
+              "text-muted-foreground hover:bg-muted hover:text-foreground",
+              sidebarCollapsed 
+                ? "justify-center p-2"
+                : "justify-start px-3 py-2"
+            )}
+            title={sidebarCollapsed ? t('common.logout') : undefined}
+          >
+            <LogOut className={cn(
+              "h-5 w-5 flex-shrink-0", 
+              !sidebarCollapsed && "mr-3"
+            )} />
+            {!sidebarCollapsed && (
+              <span className="truncate">{t('common.logout')}</span>
+            )}
+          </Button>
+        </div>
       </div>
     </>
   );

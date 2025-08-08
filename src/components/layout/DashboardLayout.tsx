@@ -8,7 +8,8 @@ import { cn } from '@/lib/utils';
 export function DashboardLayout() {
   const { sidebarCollapsed } = useAppStore();
   
-  const sidebarWidth = sidebarCollapsed ? 60 : 280;
+  // Updated widths to match the new sidebar sizing
+  const sidebarWidth = sidebarCollapsed ? 80 : 280;
 
   return (
     <div className="min-h-screen bg-background">

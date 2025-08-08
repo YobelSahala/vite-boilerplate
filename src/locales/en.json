@@ -49,6 +49,7 @@
     "confirm": "Confirm",
     "toggleSidebar": "Toggle sidebar",
     "switchLanguage": "Switch language",
-    "switchTheme": "Switch theme"
+    "switchTheme": "Switch theme",
+    "logout": "Logout"
   }
 }

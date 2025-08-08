@@ -49,6 +49,7 @@
     "confirm": "Konfirmasi",
     "toggleSidebar": "Toggle sidebar",
     "switchLanguage": "Ganti bahasa",
-    "switchTheme": "Ganti tema"
+    "switchTheme": "Ganti tema",
+    "logout": "Keluar"
   }
 }

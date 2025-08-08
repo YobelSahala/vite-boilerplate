@@ -37,7 +37,7 @@ export function Breadcrumbs() {
               </BreadcrumbItem>
               {!isLast && (
                 <BreadcrumbSeparator>
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-4 w-4 ml-2" />
                 </BreadcrumbSeparator>
               )}
             </div>
