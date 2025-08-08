@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "settings": "Settings",
+    "analytics": "Analytics",
+    "addProduct": "Add Product"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back!",
+    "totalRevenue": "Total Revenue",
+    "totalOrders": "Total Orders",
+    "totalProducts": "Total Products",
+    "totalCustomers": "Total Customers",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "viewAnalytics": "View Analytics",
+    "manageProducts": "Manage Products"
+  },
+  "products": {
+    "title": "Products",
+    "addNew": "Add New Product",
+    "search": "Search products...",
+    "name": "Name",
+    "category": "Category",
+    "price": "Price",
+    "status": "Status",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "addProduct": {
+    "title": "Add New Product",
+    "name": "Product Name",
+    "description": "Description",
+    "price": "Price",
+    "category": "Category",
+    "selectCategory": "Select a category",
+    "save": "Save Product",
+    "cancel": "Cancel"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "confirm": "Confirm",
+    "toggleSidebar": "Toggle sidebar",
+    "switchLanguage": "Switch language",
+    "switchTheme": "Switch theme"
+  }
+}

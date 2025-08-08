@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "dashboard": "Dasbor",
+    "products": "Produk",
+    "settings": "Pengaturan",
+    "analytics": "Analitik",
+    "addProduct": "Tambah Produk"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "welcome": "Selamat datang kembali!",
+    "totalRevenue": "Total Pendapatan",
+    "totalOrders": "Total Pesanan",
+    "totalProducts": "Total Produk",
+    "totalCustomers": "Total Pelanggan",
+    "recentActivity": "Aktivitas Terbaru",
+    "quickActions": "Aksi Cepat",
+    "viewAnalytics": "Lihat Analitik",
+    "manageProducts": "Kelola Produk"
+  },
+  "products": {
+    "title": "Produk",
+    "addNew": "Tambah Produk Baru",
+    "search": "Cari produk...",
+    "name": "Nama",
+    "category": "Kategori",
+    "price": "Harga",
+    "status": "Status",
+    "actions": "Aksi",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "active": "Aktif",
+    "inactive": "Tidak Aktif"
+  },
+  "addProduct": {
+    "title": "Tambah Produk Baru",
+    "name": "Nama Produk",
+    "description": "Deskripsi",
+    "price": "Harga",
+    "category": "Kategori",
+    "selectCategory": "Pilih kategori",
+    "save": "Simpan Produk",
+    "cancel": "Batal"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "success": "Berhasil!",
+    "confirm": "Konfirmasi",
+    "toggleSidebar": "Toggle sidebar",
+    "switchLanguage": "Ganti bahasa",
+    "switchTheme": "Ganti tema"
+  }
+}
